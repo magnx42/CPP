@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "Contact.hpp"
+#include <iomanip>
 
 class PhoneBook
 {
@@ -16,6 +17,7 @@ public:
 	PhoneBook();
 	void newContact();
 	void search();
+	void printer(std::string);
 };
 
 #endif

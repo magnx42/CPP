@@ -1,8 +1,8 @@
-NAME    = megaphone
+NAME    = PhoneBook
 CXX      = g++
 CXXFLAGS  = -Wall -Wextra -Werror -g -std=c++98
 OBJ_DIR = .obj
-SRC     = Contact.cpp Phonebook.cpp
+SRC     = Contact.cpp PhoneBook.cpp main.cpp
 OBJ     = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.cpp=.o)))
 
 all: $(NAME)
