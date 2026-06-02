@@ -63,15 +63,9 @@ void PhoneBook::search()
 			break ;
 	}
 	int nb = buffer[0] - '0';
-	std::cout << 
-	this->printer(this->contact[nb].getFirstName());
-	std::cout << std::endl;
-	this->printer(this->contact[nb].getLastName());
-	std::cout << std::endl;
-	this->printer(this->contact[nb].getNickname());
-	std::cout << std::endl;
-	this->printer(this->contact[nb].getNumero());
-	std::cout << std::endl;
-	this->printer(this->contact[nb].getSecret());
-	std::cout << std::endl;
+	std::cout << "First name :" << this->contact[nb].getFirstName() << std::endl;
+	std::cout << "Last name :" << this->contact[nb].getLastName() << std::endl;
+	std::cout << "Nickname :" << this->contact[nb].getNickname() << std::endl;
+	std::cout << "Numero :" << this->contact[nb].getNumero() << std::endl;
+	std::cout << "Darkest secret :" << this->contact[nb].getSecret() << std::endl;
 }
