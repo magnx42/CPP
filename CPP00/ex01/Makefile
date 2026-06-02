@@ -1,5 +1,5 @@
 NAME    = PhoneBook
-CXX      = g++
+CXX      = c++
 CXXFLAGS  = -Wall -Wextra -Werror -g -std=c++98
 OBJ_DIR = .obj
 SRC     = Contact.cpp PhoneBook.cpp main.cpp

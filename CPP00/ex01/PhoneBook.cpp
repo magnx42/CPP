@@ -24,6 +24,8 @@ void PhoneBook::newContact()
 	std::cout << "Enter darkest secret :";
 	std::getline(std::cin, buffer);
 	contact[current].setSecret(buffer);
+	numberContact++;
+	current++;
 }
 
 void PhoneBook::printer(std::string str)
@@ -43,7 +45,7 @@ void PhoneBook::search()
 {
 
 	std::cout << "     Index|first name| last name|  nickname|\n";
-	for (int i = 0; i < numberContact + 1; i++)
+	for (int i = 0; i < numberContact; i++)
 	{
 		std::cout << std::setw(10) << i << "|";
 		this->printer(this->contact[i].getFirstName());

@@ -1,5 +1,5 @@
 NAME    = megaphone
-CXX      = g++
+CXX      = c++
 CXXFLAGS  = -Wall -Wextra -Werror -g -std=c++98
 OBJ_DIR = .obj
 SRC     = megaphone.cpp
