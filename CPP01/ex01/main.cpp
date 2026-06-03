@@ -10,7 +10,7 @@ int main(int ac, char **av)
 	int n;
 	std::stringstream ss(av[1]);
 	ss >> n;
-	if(ss.fail() == 1)
+	if(ss.fail() == 1 || n <= 0)
 	{
 		std::cerr << "Wrong argument" << std::endl;
 		return 1;
