@@ -15,7 +15,6 @@ void Zombie::setName(std::string name_z)
 	name = name_z;
 }
 
-
 Zombie::~Zombie()
 {
 	std::cout << "Zombie " << name << " destroy" << std::endl;

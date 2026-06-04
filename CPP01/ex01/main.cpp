@@ -15,12 +15,8 @@ int main(int ac, char **av)
 		std::cerr << "Wrong argument" << std::endl;
 		return 1;
 	}
-	else
-		std::cout << "int conversion ok : " << n << std::endl;
 	Zombie *z = zombieHorde(n, "Foo");
 	for(int i = 0;i < n;i++)
-	{
 		z[i].announce();
-	}
 	delete[] z;
 }
