@@ -1,8 +1,8 @@
-NAME    = Violence
+NAME    = Replace
 CXX      = c++
 CXXFLAGS  = -Wall -Wextra -Werror -g -std=c++98
 OBJ_DIR = .obj
-SRC     = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC     = main.cpp
 OBJ     = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.cpp=.o)))
 
 all: $(NAME)
