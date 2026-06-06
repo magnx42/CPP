@@ -48,7 +48,7 @@ void Harl::complain(std::string level)
         }
         default:
         {
-            std::cout << "unknown level" << std::endl;
+            std::cout << "Unknown level" << std::endl;
             break ;
         }
     }
