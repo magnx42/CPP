@@ -6,25 +6,33 @@ PhoneBook::PhoneBook()
 	current = 0;
 }
 
-void PhoneBook::newContact()
+std::string PhoneBook::setContactInfo(std::string str)
 {
 	std::string buffer;
-	std::cout << "Enter first name :";
-	std::getline(std::cin, buffer);
-	contact[current].setFirstName(buffer);
-	std::cout << "Enter last name :";
-	std::getline(std::cin, buffer);
-	contact[current].setLastName(buffer);
-	std::cout << "Enter nickname :";
-	std::getline(std::cin, buffer);
-	contact[current].setNickname(buffer);
-	std::cout << "Enter phone number :";
-	std::getline(std::cin, buffer);
-	contact[current].setNumero(buffer);
-	std::cout << "Enter darkest secret :";
-	std::getline(std::cin, buffer);
-	contact[current].setSecret(buffer);
-	numberContact++;
+	while (std::cin)
+	{
+		std::cout << str;
+		getline(std::cin, buffer);
+		if (buffer.length() == 0)
+			continue;
+		else
+			return str;
+	}
+	return "";
+}
+
+void PhoneBook::newContact()
+{
+	if (current == 7)
+		current = 0;
+	PhoneBook::setContactInfo("Enter first name :");
+	contact[current].setFirstName(PhoneBook::setContactInfo("Enter first name :"));
+	contact[current].setLastName(PhoneBook::setContactInfo("Enter last name :"));
+	contact[current].setNickname(PhoneBook::setContactInfo("Enter nickname :"));
+	contact[current].setNumero(PhoneBook::setContactInfo("Enter phone number :"));
+	contact[current].setSecret(PhoneBook::setContactInfo("Enter darkest secret :"));
+	if (numberContact < 8)
+		numberContact++;
 	current++;
 }
 
@@ -45,6 +53,8 @@ void PhoneBook::search()
 {
 
 	std::cout << "     Index|first name| last name|  nickname|\n";
+	if (numberContact == 0)
+		return;
 	for (int i = 0; i < numberContact; i++)
 	{
 		std::cout << std::setw(10) << i << "|";
@@ -59,10 +69,10 @@ void PhoneBook::search()
 	{
 		std::cout << "Enter index of contact :";
 		getline(std::cin, buffer);
-		if(buffer.length() != 1 || buffer[0] - '0' < 0 || buffer[0] - '0' > numberContact)
+		if (buffer.length() != 1 || buffer[0] - '0' < 0 || buffer[0] - '0' > numberContact)
 			continue;
 		else
-			break ;
+			break;
 	}
 	int nb = buffer[0] - '0';
 	std::cout << "First name :" << this->contact[nb].getFirstName() << std::endl;

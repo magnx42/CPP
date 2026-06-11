@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 #include <iostream>
-static const int _bits = 8;
+const int _bits = 8;
 
 Fixed::Fixed()
 {
@@ -12,10 +12,10 @@ Fixed::~Fixed()
 	std::cout << "default destructor called" << std::endl;
 }
 
-
-Fixed::Fixed& operator=(const Fixed& other)
+Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "copy assignment operator called" << std::endl;
+	return *this;
 }
 
 Fixed::Fixed(const Fixed& other)

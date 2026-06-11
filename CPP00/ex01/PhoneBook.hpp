@@ -18,6 +18,7 @@ public:
 	void newContact();
 	void search();
 	void printer(std::string);
+	std::string setContactInfo(std::string str);
 };
 
 #endif
