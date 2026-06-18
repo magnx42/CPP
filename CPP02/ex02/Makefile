@@ -1,8 +1,8 @@
-NAME    = Zombie
+NAME    = Fixed
 CXX      = c++
 CXXFLAGS  = -Wall -Wextra -Werror -g -std=c++98
 OBJ_DIR = .obj
-SRC     = zombieHorde.cpp Zombie.cpp main.cpp
+SRC     = Fixed.cpp main.cpp
 OBJ     = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.cpp=.o)))
 
 all: $(NAME)
