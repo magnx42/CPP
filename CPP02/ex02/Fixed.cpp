@@ -25,7 +25,7 @@ float Fixed::toFloat() const
 
 int Fixed::toInt() const
 {
-	return (_value << _bits);
+	return (_value / (1<< _bits));
 }
 
 Fixed::~Fixed()
