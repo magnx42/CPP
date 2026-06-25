@@ -10,14 +10,14 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _lifePoint(10), _energyPoint
 	std::cout << "Default named constructor called" << std::endl;
 }
 
-ClapTrap ClapTrap::operator=(const ClapTrap& other)
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
 	if(this != &other)
 	{
 		_name = other._name;
 		_lifePoint = other._lifePoint;
 		_attackDamage = other._attackDamage;
-		_energyPoint = other._attackDamage;
+		_energyPoint = other._energyPoint;
 	}
 	return *this;
 }
