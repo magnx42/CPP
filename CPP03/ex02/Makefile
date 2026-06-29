@@ -1,8 +1,8 @@
-NAME    = ClapTrap
+NAME    = FragTrap
 CXX      = c++
 CXXFLAGS  = -Wall -Wextra -Werror -g -std=c++98
 OBJ_DIR = .obj
-SRC     = ClapTrap.cpp main.cpp
+SRC     = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
 OBJ     = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.cpp=.o)))
 
 all: $(NAME)
