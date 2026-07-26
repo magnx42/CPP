@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Thomas"), _grade(150)
 {
@@ -25,7 +26,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
-	std::cout << "Constructor with name and grade as parametter called" << std::endl;
+	std::cout << "Default parametters Bureaucrat constructor called" << std::endl;
 	if (_grade < 1)
 		throw GradeTooHighException();
 	else if (_grade > 150)
@@ -70,4 +71,17 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "Grade too low!";
+}
+
+void Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	catch(std::exception& e)
+	{
+		std::cout << _name << " couldn't sign " << form.getName() << " because " <<  e.what() << std::endl;
+	}
 }
