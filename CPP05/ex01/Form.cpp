@@ -1,6 +1,6 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
-Form::Form() : _name("Contractpipicaca"), _signed(false), _gradeExec(70), _gradeSign(70)
+Form::Form() : _name("Contract default name"), _signed(false), _gradeExec(70), _gradeSign(70)
 {
 	std::cout << "Default Form constructor called" << std::endl;
 }
