@@ -12,11 +12,11 @@ AForm::AForm(const AForm& other) : _name(other._name), _signed(other._signed), _
 
 AForm::AForm(std::string name, int exec, int sign) : _name(name), _signed(false), _gradeExec(exec), _gradeSign(sign)
 {
-	std::cout << "Default parametters AForm constructor called" << std::endl;
 	if(exec < 1 || sign < 1)
 		throw GradeTooHighException();
 	else if(exec > 150 || sign > 150)
 		throw GradeTooLowException();
+	std::cout << "Default parametters AForm constructor called" << std::endl;
 }
 
 AForm& AForm::operator=(const AForm& other)
@@ -60,6 +60,14 @@ void AForm::beSigned(const Bureaucrat& bur)
 		_signed = true;
 }
 
+void AForm::verifgrade(Bureaucrat const & bur) const
+{
+	if(_signed == false)
+        throw  FormNotSignedException();
+    if(bur.getGrade() > _gradeExec)
+        throw GradeTooLowException();
+}
+
 std::ostream& operator<<(std::ostream& out, const AForm& AForm)
 {
 	out << "| AForm |" << std::endl << "Name: " << AForm.getName() << std::endl << "Is signed: " << std::boolalpha << AForm.getSigned() << std::noboolalpha <<  std::endl << "Execute grade: " << AForm.getGradeExec() << std::endl << "Grade Sign: " << AForm.getGradeSign();
@@ -74,4 +82,9 @@ const char* AForm::GradeTooHighException::what() const throw()
 const char* AForm::GradeTooLowException::what() const throw()
 {
 	return "Grade too low.";
+}
+
+const char* AForm::FormNotSignedException::what() const throw()
+{
+	return "Form not signed";
 }
