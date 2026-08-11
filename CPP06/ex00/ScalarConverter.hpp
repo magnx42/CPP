@@ -3,6 +3,15 @@
 #include <iostream>
 #include <string>
 
+enum e_type {
+    PSEUDO,
+    INVALID,
+    DOUBLE,
+    CHAR,
+    INT,
+    FLOAT
+};
+
 class ScalarConverter {
 private:
     ScalarConverter();
