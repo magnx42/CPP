@@ -10,7 +10,7 @@ void iter(T *tab, const int len, F f)
 }
 
 template <typename T>
-void display(T t)
+void display(const T &t)
 {
     std::cout << t;
 }

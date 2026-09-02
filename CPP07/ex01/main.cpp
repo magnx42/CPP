@@ -30,5 +30,5 @@ int main()
 
     std::cout << std::endl << "=== const string tab ===" << std::endl;
     const std::string str4[] = {"salut", "tu", "vas", "bien"};
-    ::iter(str4, 5, ::display<std::string>);
+    ::iter(str4, 4, ::display<std::string>);
 }
