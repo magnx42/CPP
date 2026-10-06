@@ -137,5 +137,20 @@ int main()
         printRange(empty.begin(), empty.end());
     }
 
+    std::cout << std::endl << "=== MutantStack const : begin() const / end() const ===" << std::endl;
+    {
+        MutantStack<int> ms;
+        ms.push(1);
+        ms.push(2);
+        ms.push(3);
+
+        // Une reference const n'a acces qu'aux surcharges const, qui renvoient des const_iterator.
+        const MutantStack<int>& cref = ms;
+        MutantStack<int>::const_iterator cit = cref.begin();
+        std::cout << "premier element   : " << *cit << std::endl;
+        std::cout << "parcours          : ";
+        printRange(cref.begin(), cref.end());
+    }
+
     return 0;
 }
