@@ -3,7 +3,7 @@ CXX      = c++
 CXXFLAGS  = -Wall -Wextra -Werror -std=c++98
 OBJ_DIR = .obj
 SRC     = main.cpp
-HEADERS = MutantStack.hpp
+HEADERS = BitcoinExchange.hpp
 OBJ     = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.cpp=.o)))
 
 all: $(NAME)

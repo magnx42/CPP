@@ -27,7 +27,7 @@ public:
 };
 
 template <typename T>
-Array<T>::Array() : _tabSize(0), t(new T[0])
+Array<T>::Array() : _tabSize(0), t(NULL)
 {
 }
 
